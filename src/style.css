@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* カスタムアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(197, 176, 205, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(197, 176, 205, 0.6);
+  }
+}
+
+/* ユーティリティクラス */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* グロー効果 */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(197, 176, 205, 0.3);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 40px rgba(197, 176, 205, 0.4);
+}
+
+.shadow-glow-xl {
+  box-shadow: 0 0 60px rgba(197, 176, 205, 0.5);
+}
+
+/* モダンシャドウ */
+.shadow-modern {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-modern-lg {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-modern-xl {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}

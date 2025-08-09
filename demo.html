@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦍 猿でもわかるUnity取説</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-navy': '#17313E',
+                        'medium-blue': '#415E72',
+                        'light-purple': '#C5B0CD',
+                        'cream': '#F3E2D4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #17313E;
+            color: #F3E2D4;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            template: `
+                <div class="min-h-screen" style="background-color: #17313E;">
+                    <!-- ナビゲーション -->
+                    <nav class="shadow-lg" style="background-color: #415E72;">
+                        <div class="max-w-7xl mx-auto px-4">
+                            <div class="flex justify-between h-16">
+                                <div class="flex items-center">
+                                    <h1 class="text-xl font-bold" style="color: #F3E2D4;">🦍 猿でもわかるUnity取説</h1>
+                                </div>
+                                <div class="flex items-center space-x-6">
+                                    <a href="#prefab" class="transition-colors" style="color: #F3E2D4;" @mouseover="$event.target.style.color='#C5B0CD'" @mouseout="$event.target.style.color='#F3E2D4'">プレハブ</a>
+                                    <a href="#attach" class="transition-colors" style="color: #F3E2D4;" @mouseover="$event.target.style.color='#C5B0CD'" @mouseout="$event.target.style.color='#F3E2D4'">アタッチ</a>
+                                    <a href="#ui-toolkit" class="transition-colors" style="color: #F3E2D4;" @mouseover="$event.target.style.color='#C5B0CD'" @mouseout="$event.target.style.color='#F3E2D4'">UI Toolkit</a>
+                                    <a href="#tips" class="transition-colors" style="color: #F3E2D4;" @mouseover="$event.target.style.color='#C5B0CD'" @mouseout="$event.target.style.color='#F3E2D4'">Tips</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- メインコンテンツ -->
+                    <main class="max-w-4xl mx-auto px-4 py-8">
+                        <!-- ヒーローセクション -->
+                        <section class="text-center mb-12">
+                            <h2 class="text-4xl font-bold mb-4" style="color: #F3E2D4;">🎮 Unity超初心者ガイド</h2>
+                            <p class="text-lg" style="color: #C5B0CD;">猿でもわかるレベルで説明します！一緒に頑張ろう！</p>
+                        </section>
+
+                        <!-- プレハブセクション -->
+                        <section id="prefab" class="mb-16">
+                            <div class="rounded-lg p-8 mb-8" style="background-color: #415E72;">
+                                <h3 class="text-3xl font-bold mb-6 flex items-center" style="color: #F3E2D4;">
+                                    📦 プレハブの使い方
+                                </h3>
+                                
+                                <div class="space-y-6">
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">🤔 プレハブって何？</h4>
+                                        <p class="mb-4" style="color: #F3E2D4;">
+                                            プレハブとは、ゲームオブジェクトの「設計図」のことです。
+                                            同じキャラクターや建物を何個も作りたい時に使います。
+                                        </p>
+                                        <div class="p-4 rounded border-l-4" style="background-color: #415E72; border-color: #C5B0CD;">
+                                            <p style="color: #F3E2D4;">
+                                                🍎 例えば、リンゴを100個ゲームに配置したい時、1個1個作るのは大変ですよね？
+                                                プレハブを使えば、リンゴの「ひな形」を1個作って、それをコピーして100個作れます！
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">📝 プレハブの作り方</h4>
+                                        <ol class="list-decimal list-inside space-y-3" style="color: #F3E2D4;">
+                                            <li>Hierarchyでゲームオブジェクトを作成（例：Cube）</li>
+                                            <li>そのオブジェクトを好きなようにカスタマイズ</li>
+                                            <li>ProjectウィンドウのAssetsフォルダにドラッグ&ドロップ</li>
+                                            <li>🎉 完成！青いアイコンになったらプレハブです</li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">🎯 プレハブの使い方</h4>
+                                        <div class="grid md:grid-cols-2 gap-4">
+                                            <div class="p-4 rounded" style="background-color: #415E72;">
+                                                <h5 class="font-semibold mb-2" style="color: #F3E2D4;">配置する時：</h5>
+                                                <p class="text-sm" style="color: #F3E2D4;">ProjectからHierarchyにドラッグ</p>
+                                            </div>
+                                            <div class="p-4 rounded" style="background-color: #415E72;">
+                                                <h5 class="font-semibold mb-2" style="color: #F3E2D4;">編集する時：</h5>
+                                                <p class="text-sm" style="color: #F3E2D4;">プレハブをダブルクリック</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-4 rounded" style="background-color: rgba(197, 176, 205, 0.2);">
+                                        <p style="color: #F3E2D4;">
+                                            💡 <strong>猿ポイント：</strong>
+                                            プレハブを編集すると、そのプレハブから作られた全てのオブジェクトが一斉に変わります！
+                                            100個のリンゴの色を一気に変えたい時などに便利です。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- アタッチセクション -->
+                        <section id="attach" class="mb-16">
+                            <div class="rounded-lg p-8 mb-8" style="background-color: #415E72;">
+                                <h3 class="text-3xl font-bold mb-6 flex items-center" style="color: #F3E2D4;">
+                                    🔗 アタッチの使い方
+                                </h3>
+                                
+                                <div class="space-y-6">
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">🤔 アタッチって何？</h4>
+                                        <p class="mb-4" style="color: #F3E2D4;">
+                                            アタッチとは、ゲームオブジェクトに「部品」を取り付けることです。
+                                            車にエンジンを付けるような感じです。
+                                        </p>
+                                        <div class="p-4 rounded border-l-4" style="background-color: #415E72; border-color: #C5B0CD;">
+                                            <p style="color: #F3E2D4;">
+                                                🚗 車（ゲームオブジェクト）にエンジン（スクリプト）、ライト（Light）、
+                                                音響（AudioSource）などの部品を付けて、ちゃんと動く車にします！
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">📝 アタッチの方法</h4>
+                                        <div class="space-y-4">
+                                            <div class="p-4 rounded" style="background-color: #415E72;">
+                                                <h5 class="font-semibold mb-2" style="color: #F3E2D4;">方法1: Add Componentボタン</h5>
+                                                <ol class="list-decimal list-inside space-y-1 text-sm" style="color: #F3E2D4;">
+                                                    <li>Hierarchyでオブジェクトを選択</li>
+                                                    <li>Inspectorの「Add Component」ボタンをクリック</li>
+                                                    <li>追加したいコンポーネントを検索して選択</li>
+                                                </ol>
+                                            </div>
+                                            
+                                            <div class="p-4 rounded" style="background-color: #415E72;">
+                                                <h5 class="font-semibold mb-2" style="color: #F3E2D4;">方法2: ドラッグ&ドロップ</h5>
+                                                <ol class="list-decimal list-inside space-y-1 text-sm" style="color: #F3E2D4;">
+                                                    <li>Projectからスクリプトファイルを選択</li>
+                                                    <li>Inspectorにドラッグ&ドロップ</li>
+                                                    <li>または、Hierarchyのオブジェクトにドラッグ</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-4 rounded" style="background-color: rgba(197, 176, 205, 0.2);">
+                                        <p style="color: #F3E2D4;">
+                                            💡 <strong>猿ポイント：</strong>
+                                            アタッチしたコンポーネントは、Inspectorで右クリック→「Remove Component」で外せます。
+                                            いろいろ試してみて、不要になったら外しましょう！
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- UI Toolkitセクション -->
+                        <section id="ui-toolkit" class="mb-16">
+                            <div class="rounded-lg p-8 mb-8" style="background-color: #415E72;">
+                                <h3 class="text-3xl font-bold mb-6 flex items-center" style="color: #F3E2D4;">
+                                    🎨 Unity UI Toolkit + UI Builderの使い方
+                                </h3>
+                                
+                                <div class="space-y-6">
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">🤔 UI Toolkitって何？</h4>
+                                        <p class="mb-4" style="color: #F3E2D4;">
+                                            UI Toolkitは、Unityでゲームの画面（UI）を作るための新しいシステムです。
+                                            ボタンや文字、メニューなどを作るのに使います。
+                                        </p>
+                                        <div class="p-4 rounded border-l-4" style="background-color: #415E72; border-color: #C5B0CD;">
+                                            <p style="color: #F3E2D4;">
+                                                📱 スマホアプリの画面を作るような感じです。
+                                                「スタートボタン」「設定メニュー」「スコア表示」などを配置します！
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-4 rounded" style="background-color: rgba(197, 176, 205, 0.2);">
+                                        <p style="color: #F3E2D4;">
+                                            💡 <strong>猿ポイント：</strong>
+                                            UI BuilderはWebサイト作成のような感覚で使えます。
+                                            慣れるまで時間がかかりますが、一度覚えると圧倒的に効率的です！
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- その他のTipsセクション -->
+                        <section id="tips" class="mb-16">
+                            <div class="rounded-lg p-8 mb-8" style="background-color: #415E72;">
+                                <h3 class="text-3xl font-bold mb-6 flex items-center" style="color: #F3E2D4;">
+                                    💡 その他有用な知識
+                                </h3>
+                                
+                                <div class="space-y-6">
+                                    <div class="rounded-lg p-6" style="background-color: #17313E;">
+                                        <h4 class="text-xl font-semibold mb-3" style="color: #C5B0CD;">⌨️ 便利なショートカットキー</h4>
+                                        <div class="grid md:grid-cols-2 gap-4">
+                                            <div class="space-y-2">
+                                                <div class="flex justify-between p-2 rounded" style="background-color: #415E72;">
+                                                    <span style="color: #F3E2D4;">Ctrl + S</span>
+                                                    <span class="text-sm" style="color: #C5B0CD;">保存</span>
+                                                </div>
+                                                <div class="flex justify-between p-2 rounded" style="background-color: #415E72;">
+                                                    <span style="color: #F3E2D4;">Ctrl + Z</span>
+                                                    <span class="text-sm" style="color: #C5B0CD;">元に戻す</span>
+                                                </div>
+                                                <div class="flex justify-between p-2 rounded" style="background-color: #415E72;">
+                                                    <span style="color: #F3E2D4;">Ctrl + D</span>
+                                                    <span class="text-sm" style="color: #C5B0CD;">複製</span>
+                                                </div>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <div class="flex justify-between p-2 rounded" style="background-color: #415E72;">
+                                                    <span style="color: #F3E2D4;">F</span>
+                                                    <span class="text-sm" style="color: #C5B0CD;">フォーカス</span>
+                                                </div>
+                                                <div class="flex justify-between p-2 rounded" style="background-color: #415E72;">
+                                                    <span style="color: #F3E2D4;">Space</span>
+                                                    <span class="text-sm" style="color: #C5B0CD;">再生/停止</span>
+                                                </div>
+                                                <div class="flex justify-between p-2 rounded" style="background-color: #415E72;">
+                                                    <span style="color: #F3E2D4;">W/E/R</span>
+                                                    <span class="text-sm" style="color: #C5B0CD;">移動/回転/拡大</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-4 rounded" style="background-color: rgba(197, 176, 205, 0.2);">
+                                        <p style="color: #F3E2D4;">
+                                            💡 <strong>猿ポイント：</strong>
+                                            分からないことがあったら、まずはUnityの公式ドキュメントを見ましょう！
+                                            英語が苦手なら、Google翻訳を使うのも手です。
+                                            あとは、YouTubeの解説動画もとても参考になります！
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                    <!-- フッター -->
+                    <footer class="py-8" style="background-color: #415E72;">
+                        <div class="max-w-4xl mx-auto px-4 text-center">
+                            <p class="mb-2" style="color: #F3E2D4;">🦍 猿でもわかるUnity取説</p>
+                            <p class="text-sm" style="color: #C5B0CD;">頑張れば誰でもゲームが作れます！一歩ずつ進んでいきましょう！</p>
+                        </div>
+                    </footer>
+                </div>
+            `,
+            mounted() {
+                // スムーズスクロール
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
