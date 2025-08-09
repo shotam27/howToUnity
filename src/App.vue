@@ -1,9 +1,4 @@
 <template>
-  <!-- TailwindCSS 動作確認バー -->
-  <div class="bg-green-500 text-white text-center py-2 text-sm font-bold">
-    ✅ TailwindCSS 正常動作中 - この緑のバーが表示されていればCSS読み込み成功
-  </div>
-
   <div
     class="min-h-screen bg-gradient-to-br from-[#17313E] via-[#415E72]/30 to-[#17313E] overflow-x-hidden"
   >
