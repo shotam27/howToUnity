@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Tailwind
+.tailwindcss-builds
+
+# Build outputs
+build/
+out/
