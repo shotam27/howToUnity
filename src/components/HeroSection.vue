@@ -26,9 +26,10 @@
     <div class="relative z-10 text-center max-w-6xl mx-auto">
       <!-- TailwindCSS テスト要素 -->
       <div class="bg-red-500 text-white p-4 mb-4 rounded-lg">
-        TailwindCSS動作テスト: この要素が赤い背景で表示されていればTailwind正常動作中
+        TailwindCSS動作テスト:
+        この要素が赤い背景で表示されていればTailwind正常動作中
       </div>
-      
+
       <!-- Main Title with enhanced styling -->
       <div class="mb-16 animate-fade-in">
         <div

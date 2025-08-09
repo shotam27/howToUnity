@@ -108,9 +108,13 @@
             >
               <div class="flex items-center mb-2">
                 <span class="text-2xl mr-3">{{ component.icon }}</span>
-                <h5 class="font-semibold text-[#F3E2D4]">{{ component.name }}</h5>
+                <h5 class="font-semibold text-[#F3E2D4]">
+                  {{ component.name }}
+                </h5>
               </div>
-              <p class="text-[#F3E2D4]/80 text-sm">{{ component.description }}</p>
+              <p class="text-[#F3E2D4]/80 text-sm">
+                {{ component.description }}
+              </p>
             </div>
           </div>
         </div>
